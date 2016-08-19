@@ -1,12 +1,38 @@
 <html>
 
-   <head>
-      <title>Gio's blog</title>
-   </head>
+   	<head>
+      		<title>Gio's blog</title>
+   	</head>
 
-   <body>
-      <p>Hi there!</p>
-      <p>It works!</p>
-   </body>
+   	<body>
+      
+      	<div>
+		<em>Life is always great</em>
+	</div>
+
+	<div>
+      		<p>Hi there!</p>
+      		<p>It works!</p>
+	</div>
+	
+	<div>
+		{{ posts }}
+	</div>
+
+	<div>
+		{% for post in posts %}
+			{{ post }}
+		{% endfor %}
+	</div>
+
+	{% for post in posts %}
+		<div>
+				<p>published: {{post.published_date}} </p>
+				<h1><a href="">{{post.tilte}}</a></h1>
+				<p>{{ post.text|linebreaksbr}}</p>
+		</div>
+	{% endfor %}
+
+	</body>
 
 </html>
